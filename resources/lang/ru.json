@@ -1,0 +1,12 @@
+{
+    "Direction":"Направление",
+    "Register":"Регистрация",
+    "Phone":"Телефон",
+    "Password":"Пароль",
+    "Confirm Password":"Подтвердите пароль",
+    "Login":"Вход",
+    "Logout":"Выход",
+    "Remember Me":"Запомнить меня",
+    "Dashboard":"Личный кабинет",
+    "You are logged in!":"Вы вошли!"
+}
