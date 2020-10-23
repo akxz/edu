@@ -71,3 +71,16 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    $(document).ready(function() {
+        // Очищаем номер телефона от посторонних символов
+        $('#phone').bind("change keyup input click", function() {
+        	if (this.value.match(/[^0-9]/g)) {
+        		this.value = this.value.replace(/[^0-9]/g,'');
+        	}
+        });
+    });
+</script>
+@endpush

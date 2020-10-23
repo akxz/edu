@@ -15,7 +15,7 @@
                             <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
 
                             <div class="col-md-6 input-group">
-                                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus maxlength="11">
+                                <input id="phone" type="tel" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus maxlength="11">
 
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">
@@ -112,6 +112,13 @@
         // Установка названия документа при изменении типа обучения
         $(document).on('change', '#direction', function() {
             setDocumentLabel();
+        });
+
+        // Очищаем номер телефона от посторонних символов
+        $('#phone').bind("change keyup input click", function() {
+        	if (this.value.match(/[^0-9]/g)) {
+        		this.value = this.value.replace(/[^0-9]/g,'');
+        	}
         });
     });
 </script>
